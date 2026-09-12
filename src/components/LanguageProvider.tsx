@@ -7,12 +7,12 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { Lang, translations, TranslationKey } from "@/lib/i18n";
+import { Lang, translations } from "@/lib/i18n";
 
 type LanguageContextType = {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: TranslationKey;
+  t: typeof translations.en;
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
