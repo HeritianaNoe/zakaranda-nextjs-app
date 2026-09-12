@@ -9,10 +9,11 @@ import {
 } from "react";
 import { Lang, translations } from "@/lib/i18n";
 
+// Atao 'any' na 'Record<string, any>' vonjimaika eto raha sendra mafy loatra ny rafitra tsirairay
 type LanguageContextType = {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  t: typeof translations.en;
+  t: any; 
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
