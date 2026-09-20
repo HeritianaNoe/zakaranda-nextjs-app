@@ -96,7 +96,7 @@ export default function Projects() {
     <section id="projects" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-          <span className="gradient-text">{t.projects.title}</span>
+          <span className="text-white">{t.projects.title}</span>
         </h2>
         <p className="text-center text-slate-400 mb-4">{t.projects.subtitle}</p>
         <div className="w-20 h-1 bg-gradient-to-r from-sky-500 to-violet-500 mx-auto mb-14 rounded-full" />
@@ -160,7 +160,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center flex flex-wrap items-center justify-center gap-4">
           <a
             href="https://lakabe.vercel.app/"
             target="_blank"
@@ -170,6 +170,29 @@ export default function Projects() {
             {lang === "fr"
               ? "Visiter LakaBe – toutes les applications"
               : "Visit LakaBe – all applications"}
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://fanorona-nine.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-600 hover:border-sky-400 text-slate-300 hover:text-sky-400 transition-all text-sm font-medium"
+          >
+            {lang === "fr"
+              ? "Jouer à Fanorona – application"
+              : "Play Fanorona – application"}
             <svg
               className="w-4 h-4"
               fill="none"

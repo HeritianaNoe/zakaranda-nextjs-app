@@ -23,7 +23,7 @@ export default function Hero() {
         </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
-          <span className="gradient-text">RASOLOMANANA</span>
+          <span className="text-white">RASOLOMANANA</span>
           <br />
           <span className="text-white">Heritiana Noe</span>
         </h1>

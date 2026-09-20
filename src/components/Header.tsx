@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#home"
-            className="text-xl font-bold tracking-tight gradient-text"
+            className="text-xl font-bold tracking-tight text-white"
           >
             RHN
           </a>
