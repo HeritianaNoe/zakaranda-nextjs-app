@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "./LanguageProvider";
+import type { Translation } from "@/lib/i18n";
 
 const projects = [
   {
@@ -89,6 +90,16 @@ const projects = [
   },
 ];
 
+const externalLinks: {
+  href: string;
+  labelKey: keyof Translation["projects"];
+}[] = [
+  { href: "https://lakabe.vercel.app/", labelKey: "visitLakabe", target: "LakaBe" },
+  { href: "https://fanorona-nine.vercel.app/", labelKey: "playFanorona", target: "Fanorona" },
+  { href: "https://katro-murex.netlify.app/", labelKey: "playKatro", target: "Katro" },
+  { href: "https://teny-puzzele.netlify.app/", labelKey: "playWordSearch", target: "Teny" },
+];
+
 export default function Projects() {
   const { lang, t } = useLanguage();
 
@@ -140,7 +151,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-sky-400 hover:text-sky-300 transition-colors"
                 >
-                  {lang === "fr" ? "Voir le projet" : "View project"}
+                  {t.projects.viewProject}
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -161,52 +172,30 @@ export default function Projects() {
         </div>
 
         <div className="mt-12 text-center flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="https://lakabe.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-600 hover:border-sky-400 text-slate-300 hover:text-sky-400 transition-all text-sm font-medium"
-          >
-            {lang === "fr"
-              ? "Visiter LakaBe – toutes les applications"
-              : "Visit LakaBe – all applications"}
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {externalLinks.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              target={item.target}
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-600 hover:border-sky-400 text-slate-300 hover:text-sky-400 transition-all text-sm font-medium"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://fanorona-nine.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-600 hover:border-sky-400 text-slate-300 hover:text-sky-400 transition-all text-sm font-medium"
-          >
-            {lang === "fr"
-              ? "Jouer à Fanorona – application"
-              : "Play Fanorona – application"}
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
+              {item.target}
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          ))}
         </div>
       </div>
     </section>
