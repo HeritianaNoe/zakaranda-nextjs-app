@@ -94,9 +94,9 @@ const externalLinks: {
   href: string;
   labelKey: keyof Translation["projects"];
 }[] = [
-  { href: "https://fanorona-nine.vercel.app/", labelKey: "playFanorona", target: "Fanorona online" },
-  { href: "https://katro-murex.netlify.app/", labelKey: "playKatro", target: "Katro online" },
-  { href: "https://teny-puzzele.netlify.app/", labelKey: "playWordSearch", target: "Teny online" },
+  { href: "https://fanorona-nine.vercel.app/", labelKey: "playFanorona" },
+  { href: "https://katro-murex.netlify.app/", labelKey: "playKatro" },
+  { href: "https://teny-puzzele.netlify.app/", labelKey: "playWordSearch" },
 ];
 
 export default function Projects() {
@@ -175,11 +175,11 @@ export default function Projects() {
             <a
               key={item.href}
               href={item.href}
-              target={item.target}
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-600 hover:border-sky-400 text-slate-300 hover:text-sky-400 transition-all text-sm font-medium"
             >
-              {item.target}
+              {t.projects[item.labelKey]}
               <svg
                 className="w-4 h-4"
                 fill="none"

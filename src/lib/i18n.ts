@@ -38,6 +38,10 @@ export const translations = {
       title: "Featured Projects",
       subtitle: "Some of the applications I've built",
       view: "View details",
+      viewProject: "View project",
+      playFanorona: "Play Fanorona online",
+      playKatro: "Play Katro online",
+      playWordSearch: "Play Word Search online",
       tech: "Tech stack",
     },
     contact: {
@@ -89,6 +93,10 @@ export const translations = {
       title: "Projets phares",
       subtitle: "Quelques applications que j'ai réalisées",
       view: "Voir les détails",
+      viewProject: "Voir le projet",
+      playFanorona: "Jouer à Fanorona en ligne",
+      playKatro: "Jouer à Katro en ligne",
+      playWordSearch: "Jouer aux mots mêlés en ligne",
       tech: "Stack technique",
     },
     contact: {
@@ -106,4 +114,5 @@ export const translations = {
   },
 } as const;
 
-export type TranslationKey = typeof translations.en;
+export type Translation = typeof translations.en;
+export type TranslationKey = Translation;
